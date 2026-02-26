@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>แผนเที่ยวญี่ปุ่น 5 วัน (Tokyo + ชนบท Kawaguchiko + Disney + Sea Life Park)</title>
+  <meta name="description" content="Itinerary ญี่ปุ่น 5 วัน สำหรับครอบครัว 3 คน (พ่อ แม่ ลูก 8 ขวบ) งบ 100k รวมพักชนบทเรียวกัง + Disneyland + Tokyo Sea Life Park" />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --muted:#b9c3d7;
+      --text:#eef3ff;
+      --line:rgba(255,255,255,.12);
+      --accent:#7dd3fc;
+      --shadow: 0 12px 40px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Thai", "Noto Sans", Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(167,139,250,.25), transparent 55%),
+                  radial-gradient(1000px 600px at 90% 0%, rgba(125,211,252,.20), transparent 50%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      padding:28px 18px 14px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .topbar{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;
+    }
+    .title{display:flex; flex-direction:column; gap:6px}
+    h1{margin:0; font-size:22px; letter-spacing:.2px}
+    .subtitle{margin:0; color:var(--muted); font-size:13px}
+    .actions{display:flex; gap:8px; flex-wrap:wrap}
+    button{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:14px;
+      cursor:pointer;
+      box-shadow: 0 6px 20px rgba(0,0,0,.18);
+      font-weight:600;
+      font-size:13px;
+      display:inline-flex; gap:8px; align-items:center;
+    }
+    button:hover{border-color:rgba(255,255,255,.22)}
+    main{
+      max-width:1100px;
+      margin:0 auto;
+      padding:10px 18px 40px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:16px;
+    }
+    @media (max-width: 980px){ main{grid-template-columns:1fr} }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card .hd{
+      padding:14px 14px 12px;
+      border-bottom:1px solid var(--line);
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    .card .hd h2{margin:0; font-size:15px; display:flex; gap:10px; align-items:center}
+    .badge{
+      font-size:12px;
+      padding:4px 10px;
+      background:rgba(255,255,255,.08);
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+    .card .bd{padding:14px}
+    .chips{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{
+      font-size:12px; color:var(--muted);
+      background:rgba(255,255,255,.08);
+      border:1px solid var(--line);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+    .muted{color:var(--muted)}
+    .days{display:flex; flex-direction:column; gap:12px}
+    details.day{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(0,0,0,.12);
+      overflow:hidden;
+    }
+    details.day[open]{background:rgba(0,0,0,.18)}
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:14px 14px;
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+    }
+    summary::-webkit-details-marker{display:none}
+    .dayTitle{display:flex; flex-direction:column; gap:4px}
+    .dayTitle strong{font-size:14px}
+    .dayTitle span{font-size:12px; color:var(--muted)}
+    .dayMeta{display:flex; flex-direction:column; gap:8px; align-items:flex-end}
+    .tagrow{display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end}
+    .tag{
+      font-size:11px; padding:4px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--muted);
+    }
+    .content{padding:0 14px 14px}
+    .timeline{
+      margin:8px 0 0;
+      border-top:1px dashed rgba(255,255,255,.18);
+      padding-top:10px;
+      display:flex; flex-direction:column; gap:8px;
+    }
+    .row{
+      display:grid;
+      grid-template-columns: 78px 1fr;
+      gap:10px;
+      padding:10px 10px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      border-radius:14px;
+    }
+    .time{font-weight:800; color:var(--accent); font-size:12px; letter-spacing:.2px}
+    .item strong{display:block; font-size:13px}
+    .item span{display:block; color:var(--muted); font-size:12px}
+    .list{margin:0; padding-left:18px; color:var(--muted); font-size:12px}
+    .list li{margin:6px 0}
+    .kpi{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:10px;
+    }
+    @media (max-width:560px){.kpi{grid-template-columns:1fr}}
+    .kpi .box{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      border-radius:16px;
+      padding:12px;
+    }
+    .kpi .box .v{font-weight:900; font-size:16px}
+    .kpi .box .k{color:var(--muted); font-size:12px}
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(0,0,0,.10);
+    }
+    th, td{
+      padding:10px 10px;
+      font-size:12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      vertical-align:top;
+    }
+    th{color:var(--muted); text-align:left; background:rgba(255,255,255,.05)}
+    tr:last-child td{border-bottom:none}
+    .right{text-align:right}
+    .checklist label{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:8px 10px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      border-radius:14px;
+      margin:8px 0;
+      cursor:pointer;
+    }
+    .checklist input{margin-top:2px}
+    .hint{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      padding:10px 12px;
+      border-radius:14px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .small{font-size:12px}
+    footer{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 18px 30px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .kbd{
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size:11px;
+      color:#dbe7ff;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="title">
+      <h1>แผนเที่ยวญี่ปุ่น 5 วัน (Tokyo + ชนบท Kawaguchiko + Disneyland + Sea Life Park)</h1>
+      <p class="subtitle">ครอบครัว 3 คน (พ่อ • แม่ • ลูก 8 ขวบ) • งบ 100,000 บาท • เดือนเมษายน • กดพิมพ์เพื่อ Save PDF ได้</p>
+    </div>
+    <div class="actions">
+      <button onclick="window.print()">🖨️ พิมพ์ / Save PDF</button>
+      <button onclick="copyLink()">🔗 คัดลอกลิงก์หน้านี้</button>
+      <button onclick="toggleAll(true)">➕ เปิดทุกวัน</button>
+      <button onclick="toggleAll(false)">➖ ปิดทุกวัน</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <div class="hd">
+      <h2>📅 ตารางเวลา (กดเปิด/ปิดแต่ละวัน)</h2>
+      <span class="badge">Tokyo → Kawaguchiko (1 คืน) → Tokyo</span>
+    </div>
+    <div class="bd">
+      <div class="chips">
+        <span class="chip">✅ เที่ยวสบาย</span>
+        <span class="chip">✅ รถไฟวิวชนบท</span>
+        <span class="chip">✅ เด็กสนุก (Disney + Aquarium)</span>
+        <span class="chip">✅ นอนเรียวกัง 1 คืน</span>
+      </div>
+
+      <div class="days" style="margin-top:12px">
+        <details class="day" open>
+          <summary>
+            <div class="dayTitle">
+              <strong>Day 1 — ถึง Tokyo + Ueno / Asakusa / Skytree</strong>
+              <span>ปรับตัว • ซากุระ • วัฒนธรรม • เดินสบาย</span>
+            </div>
+            <div class="dayMeta">
+              <div class="tagrow"><span class="tag">สบาย</span><span class="tag">ซากุระ</span></div>
+              <span class="tag">พัก: Tokyo (Ueno/Asakusa)</span>
+            </div>
+          </summary>
+          <div class="content">
+            <div class="timeline">
+              <div class="row"><div class="time">08:00</div><div class="item"><strong>ถึงสนามบิน (Narita / Haneda)</strong><span>ผ่าน ตม. + รับกระเป๋า + ซื้อซิม/พ็อกเก็ตไวไฟ (ถ้าต้องการ)</span></div></div>
+              <div class="row"><div class="time">10:00</div><div class="item"><strong>เข้าเมือง → ฝากกระเป๋า</strong><span>เลือกพักใกล้สถานีใหญ่ เดินทางสะดวก</span></div></div>
+              <div class="row"><div class="time">12:30</div><div class="item"><strong>มื้อเที่ยง</strong><span>ราเมง/ข้าวแกงกะหรี่/ร้านข้าวหน้าเนื้อ</span></div></div>
+              <div class="row"><div class="time">14:00</div><div class="item"><strong>Ueno Park</strong><span>เดินเล่นใต้ซากุระ + ให้เด็กพัก</span></div></div>
+              <div class="row"><div class="time">15:30</div><div class="item"><strong>Asakusa — วัด Sensoji + Nakamise</strong><span>ขนมญี่ปุ่น/ของฝากเล็กๆ</span></div></div>
+              <div class="row"><div class="time">17:30</div><div class="item"><strong>Tokyo Skytree (เลือก: ขึ้นชมวิว หรือเดินห้าง)</strong><span>ถ้าเหนื่อย เดินห้าง Solamachi ก็พอ</span></div></div>
+              <div class="row"><div class="time">19:00</div><div class="item"><strong>มื้อเย็น + กลับที่พัก</strong><span>นอนเร็ว เตรียมไปชนบท</span></div></div>
+            </div>
+            <p class="hint" style="margin-top:10px">
+              แผนที่เร็ว:
+              <a href="https://www.google.com/maps/search/?api=1&query=Ueno+Park" target="_blank" rel="noopener">Ueno Park</a> •
+              <a href="https://www.google.com/maps/search/?api=1&query=Senso-ji" target="_blank" rel="noopener">Sensoji</a> •
+              <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Skytree" target="_blank" rel="noopener">Skytree</a>
+            </p>
+          </div>
+        </details>
+
+        <details class="day">
+          <summary>
+            <div class="dayTitle">
+              <strong>Day 2 — รถไฟวิวชนบท → Kawaguchiko + นอนเรียวกัง</strong>
+              <span>ชนบท • วิวฟูจิ • ออนเซ็น • วัฒนธรรมญี่ปุ่น</span>
+            </div>
+            <div class="dayMeta">
+              <div class="tagrow"><span class="tag">วิว</span><span class="tag">ผ่อนคลาย</span></div>
+              <span class="tag">พัก: Kawaguchiko (เรียวกัง)</span>
+            </div>
+          </summary>
+          <div class="content">
+            <div class="timeline">
+              <div class="row"><div class="time">07:30</div><div class="item"><strong>อาหารเช้า + เช็คเอาต์</strong><span>พกน้ำ/ขนมเล็กๆ ให้เด็ก</span></div></div>
+              <div class="row"><div class="time">08:30</div><div class="item"><strong>Tokyo → Otsuki</strong><span>ใช้ IC card + ตั๋วต่อ Fujikyu</span></div></div>
+              <div class="row"><div class="time">10:30</div><div class="item"><strong>Fujikyu Railway → Kawaguchiko</strong><span>ช่วงวิวชนบทสวยมาก และอาจเห็นฟูจิ</span></div></div>
+              <div class="row"><div class="time">12:00</div><div class="item"><strong>ถึง Kawaguchiko</strong><span>ฝากกระเป๋า (ถ้ายังเช็คอินไม่ได้)</span></div></div>
+              <div class="row"><div class="time">12:30</div><div class="item"><strong>มื้อเที่ยง</strong><span>แนะนำ: Hoto noodles</span></div></div>
+              <div class="row"><div class="time">14:00</div><div class="item"><strong>Mt. Fuji Panoramic Ropeway</strong><span>ถ้าคิวเยอะ ให้สลับไปทะเลสาบก่อน</span></div></div>
+              <div class="row"><div class="time">15:30</div><div class="item"><strong>Lake Kawaguchi — เรือหงส์/เดินริมทะเลสาบ</strong><span>เด็กชอบ + รูปสวย</span></div></div>
+              <div class="row"><div class="time">16:30</div><div class="item"><strong>เช็คอินเรียวกัง</strong><span>ใส่ยูกาตะ • พัก</span></div></div>
+              <div class="row"><div class="time">17:30</div><div class="item"><strong>ออนเซ็น</strong><span>ถ้ากังวลเรื่องเด็ก ให้เลือกที่มี private/family bath</span></div></div>
+              <div class="row"><div class="time">18:30</div><div class="item"><strong>อาหารเย็น (Kaiseki/Set)</strong><span>ไฮไลต์คืนชนบท</span></div></div>
+            </div>
+            <p class="hint" style="margin-top:10px">
+              แผนที่เร็ว:
+              <a href="https://www.google.com/maps/search/?api=1&query=Kawaguchiko+Station" target="_blank" rel="noopener">Kawaguchiko Station</a> •
+              <a href="https://www.google.com/maps/search/?api=1&query=Mt.+Fuji+Panoramic+Ropeway" target="_blank" rel="noopener">Ropeway</a> •
+              <a href="https://www.google.com/maps/search/?api=1&query=Lake+Kawaguchi" target="_blank" rel="noopener">Lake</a>
+            </p>
+          </div>
+        </details>
+
+        <details class="day">
+          <summary>
+            <div class="dayTitle">
+              <strong>Day 3 — เช้าชนบท + กลับ Tokyo (พัก/ช้อปเบาๆ)</strong>
+              <span>วิวเช้า • คาเฟ่วิวฟูจิ • เดินทางกลับ • พัก</span>
+            </div>
+            <div class="dayMeta">
+              <div class="tagrow"><span class="tag">สบาย</span><span class="tag">วิว</span></div>
+              <span class="tag">พัก: Tokyo</span>
+            </div>
+          </summary>
+          <div class="content">
+            <div class="timeline">
+              <div class="row"><div class="time">07:00</div><div class="item"><strong>อาหารเช้าเรียวกัง</strong><span>ลองอาหารเช้าแบบญี่ปุ่น</span></div></div>
+              <div class="row"><div class="time">08:00</div><div class="item"><strong>เดินเล่นวิวเช้า</strong><span>ถ่ายรูปฟูจิช่วงเช้า</span></div></div>
+              <div class="row"><div class="time">11:00</div><div class="item"><strong>เช็คเอาต์ + กลับ Tokyo</strong><span>กลับช่วงเที่ยง คนไม่แน่น</span></div></div>
+              <div class="row"><div class="time">13:30</div><div class="item"><strong>ถึง Tokyo + เช็คอิน</strong><span>พักโซนเดิมเพื่อไม่ย้ายไกล</span></div></div>
+              <div class="row"><div class="time">16:00</div><div class="item"><strong>ช้อปเบาๆ / เตรียม Disney</strong><span>ซื้อของจำเป็น/เสื้อกันหนาวบาง</span></div></div>
+              <div class="row"><div class="time">18:30</div><div class="item"><strong>มื้อเย็น + นอนเร็ว</strong><span>พรุ่งนี้เต็มวัน Disney</span></div></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="day">
+          <summary>
+            <div class="dayTitle">
+              <strong>Day 4 — Tokyo Disneyland (เต็มวัน)</strong>
+              <span>เด็กสนุก • พาเหรด • เครื่องเล่น</span>
+            </div>
+            <div class="dayMeta">
+              <div class="tagrow"><span class="tag">สนุก</span><span class="tag">ทั้งวัน</span></div>
+              <span class="tag">พัก: Tokyo</span>
+            </div>
+          </summary>
+          <div class="content">
+            <div class="timeline">
+              <div class="row"><div class="time">06:45</div><div class="item"><strong>ออกจากโรงแรม</strong><span>ไปเช้าๆ คุ้มสุด</span></div></div>
+              <div class="row"><div class="time">08:00</div><div class="item"><strong>ถึง Disneyland</strong><span>เช็คแอป/คิว เลือกเครื่องเล่นแรก</span></div></div>
+              <div class="row"><div class="time">12:00</div><div class="item"><strong>มื้อเที่ยง</strong><span>เลือกเมนูเด็กกินง่าย</span></div></div>
+              <div class="row"><div class="time">15:00</div><div class="item"><strong>พาเหรด (เวลาอาจเปลี่ยน)</strong><span>เผื่อเวลาจองที่นั่ง</span></div></div>
+              <div class="row"><div class="time">20:00</div><div class="item"><strong>กลับที่พัก</strong><span>พักให้เต็มที่</span></div></div>
+            </div>
+            <p class="hint" style="margin-top:10px">
+              แผนที่เร็ว:
+              <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Disneyland" target="_blank" rel="noopener">Tokyo Disneyland</a>
+            </p>
+          </div>
+        </details>
+
+        <details class="day">
+          <summary>
+            <div class="dayTitle">
+              <strong>Day 5 — Tokyo Sea Life Park + กลับไทย</strong>
+              <span>อควาเรียม • ใกล้ Disney • ของฝาก • สนามบิน</span>
+            </div>
+            <div class="dayMeta">
+              <div class="tagrow"><span class="tag">สบาย</span><span class="tag">เด็กชอบ</span></div>
+              <span class="tag">เดินทางกลับ</span>
+            </div>
+          </summary>
+          <div class="content">
+            <div class="timeline">
+              <div class="row"><div class="time">08:00</div><div class="item"><strong>เช็คเอาต์/ฝากกระเป๋า</strong><span>ถ้าไฟลต์ดึก ฝากกระเป๋าที่โรงแรมก่อน</span></div></div>
+              <div class="row"><div class="time">09:30</div><div class="item"><strong>Tokyo Sea Life Park</strong><span>ตู้ปลาทูน่ายักษ์ + เพนกวิน (2–3 ชม.)</span></div></div>
+              <div class="row"><div class="time">14:00</div><div class="item"><strong>ซื้อของฝาก</strong><span>Donki/ห้างใกล้ที่พัก</span></div></div>
+              <div class="row"><div class="time">15:30</div><div class="item"><strong>ไปสนามบิน</strong><span>เผื่อเวลาเช็คอิน</span></div></div>
+              <div class="row"><div class="time">20:00</div><div class="item"><strong>บินกลับไทย</strong><span>จบทริป 🎉</span></div></div>
+            </div>
+            <p class="hint" style="margin-top:10px">
+              แผนที่เร็ว:
+              <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Sea+Life+Park" target="_blank" rel="noopener">Tokyo Sea Life Park</a>
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <aside style="display:flex; flex-direction:column; gap:16px">
+    <section class="card">
+      <div class="hd"><h2>💵 งบประมาณ (คุมให้อยู่ใน 100K)</h2><span class="badge">ประมาณการ</span></div>
+      <div class="bd">
+        <div class="kpi">
+          <div class="box"><div class="v">100,000</div><div class="k">งบเป้าหมาย</div></div>
+          <div class="box"><div class="v">90k–105k</div><div class="k">ทำได้จริง</div></div>
+          <div class="box"><div class="v">5 วัน</div><div class="k">Tokyo + ชนบท 1 คืน</div></div>
+        </div>
+        <div style="height:10px"></div>
+        <table>
+          <thead><tr><th>รายการ</th><th class="right">งบ (บาท)</th><th>หมายเหตุ</th></tr></thead>
+          <tbody>
+            <tr><td>✈️ ตั๋วเครื่องบิน</td><td class="right"> 55,000</td><td>จองล่วงหน้า</td></tr>
+            <tr><td>🏨 โรงแรม Tokyo 3 คืน</td><td class="right"> 7,000</td><td>เน้นใกล้สถานี</td></tr>
+            <tr><td>🏡 เรียวกัง 1 คืน</td><td class="right"> 6,000</td><td>ถ้ารวมอาหารจะคุ้ม</td></tr>
+            <tr><td>🚆 เดินทาง</td><td class="right"> 7,000</td><td>IC card + Kawaguchiko + Disney</td></tr>
+            <tr><td>🎟️ Disneyland</td><td class="right">6,500</td><td>โดยประมาณ</td></tr>
+            <tr><td>🐠 Sea Life Park</td><td class="right">800</td><td>ค่าเข้าถูก</td></tr>
+            <tr><td>🍜 อาหาร</td><td class="right"> 5,000</td><td>ปรับได้</td></tr>
+            <tr><td>🛍️ ของฝาก/ฉุกเฉิน</td><td class="right"> 6,000</td><td>กันงบบาน</td></tr>
+            <tr><th>รวม</th><th class="right"> 90,000–105,000</th><th>ยังอยู่ในงบ</th></tr>
+          </tbody>
+        </table>
+
+<p class="muted small" style="margin:10px 0 0">
+  ✅ ปรับแผนนี้ให้ “กันงบตั๋วเครื่องบินไว้ 55,000 บาท” แล้ว (เฉลี่ย ~18,300 บาท/คน ถ้าตั๋ว 3 ใบ) —
+  ส่วนอื่น ๆ จะเน้นโรงแรมใกล้สถานีแบบประหยัด + อาหารร้านทั่วไป/ซูเปอร์มาร์เก็ตเพื่อคุมงบ
+</p>
+
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="hd"><h2>🧳 Checklist (ติ๊กได้)</h2><span class="badge">บันทึกอัตโนมัติ</span></div>
+      <div class="bd checklist" id="checklist">
+        <label><input type="checkbox">พาสปอร์ต + สำเนา</label>
+        <label><input type="checkbox">ตั๋วเครื่องบิน / ประกันเดินทาง</label>
+        <label><input type="checkbox">เงินสดเยน + บัตรเครดิต</label>
+        <label><input type="checkbox">ซิม/พ็อกเก็ตไวไฟ + Power bank</label>
+        <label><input type="checkbox">เสื้อกันหนาวบาง + ร่มพับ</label>
+        <label><input type="checkbox">รองเท้าสบาย + ถุงเท้าเพิ่ม</label>
+        <label><input type="checkbox">ยาประจำตัว + ยาเด็กพื้นฐาน</label>
+        <label><input type="checkbox">ของกินเล่นสำหรับคิว/รถไฟ</label>
+        <div class="hint">ทริค: ก่อนออกจากที่พักทุกวัน เช็ค <span class="kbd">น้ำ</span> + <span class="kbd">ทิชชู่</span> + <span class="kbd">บัตร IC</span></div>
+      </div>
+      <div class="bd" style="padding-top:0">
+        <button onclick="resetChecklist()">↩️ รีเซ็ต checklist</button>
+      </div>
+    </section>
+
+
+    <section class="card">
+      <div class="hd"><h2>✈️ ตั๋วเครื่องบินบินตรง (มี.ค.–เม.ย. 2026) — ราคา “ถูกสุดที่หาได้”</h2><span class="badge">อัปเดตจากเว็บค้นหาเที่ยวบิน</span></div>
+      <div class="bd">
+        <div class="hint">
+          <strong>เส้นทางแนะนำ:</strong> กรุงเทพ (BKK) → โตเกียว (TYO: NRT/HND) <br/>
+          <strong>กรอบราคาที่พบ (ไป-กลับ/ชั้นประหยัด/บินตรง):</strong>
+          <ul class="list">
+            <li><strong>Japan Airlines (JAL)</strong>: พบดีลราว <strong>฿17,900</strong> สำหรับช่วงปลายเมษายน–ต้นพฤษภาคม (เช่น Apr 24, 2026 - May 08, 2026) — เหมาะถ้า “ขยับวันได้”</li>
+            <li><strong>ANA</strong>: ราคาเริ่มต้นบินตรงที่พบราว <strong>฿18,080</strong></li>
+            <li><strong>Thai Airways</strong>: ตารางราคาแสดงช่วง <strong>Mar 2026 ~ ฿23,490</strong> และ <strong>Apr 2026 ~ ฿19,280</strong> (ขึ้นกับวัน)</li>
+            <li><strong>ZIPAIR / Thai Vietjet / Air Japan</strong>: มักถูกสุดในเชิง “ค่าโดยสารฐาน” แต่ต้องบวกค่าโหลดกระเป๋า/เลือกที่นั่ง/อาหาร (เช็คก่อนจ่ายจริง)</li>
+          </ul>
+        </div>
+
+        <table>
+          <thead><tr><th>ลิงก์เช็คราคา (บินตรง)</th><th>ใช้ทำอะไร</th></tr></thead>
+          <tbody>
+            <tr><td><a href="https://www.google.com/travel/flights/flights-from-bangkok-to-tokyo.html?gl=TH&hl=en" target="_blank" rel="noopener">Google Flights: Bangkok → Tokyo</a></td><td>ดูกราฟราคา/วันถูกสุด + กรอง “Nonstop”</td></tr>
+            <tr><td><a href="https://www.jal.co.jp/flights/en-th/flights-from-bangkok" target="_blank" rel="noopener">JAL Deals จาก Bangkok</a></td><td>เช็คดีลช่วง Apr–May ที่เจอ ~฿17,900</td></tr>
+            <tr><td><a href="https://www.thaiairways.com/flights/en-th/flights-from-bangkok-to-tokyo" target="_blank" rel="noopener">Thai Airways: Bangkok → Tokyo</a></td><td>เช็คตารางราคา Mar/Apr 2026</td></tr>
+            <tr><td><a href="https://www.zipair.net/en/ticket/fare" target="_blank" rel="noopener">ZIPAIR Fare (Tokyo⇄Bangkok)</a></td><td>ดูค่าโดยสารฐาน + ค่าบริการเสริม</td></tr>
+            <tr><td><a href="https://www.vietjetair.com/en/flight-tickets/flights-from-bangkok-to-tokyo-haneda" target="_blank" rel="noopener">VietJet Air: BKK → HND</a></td><td>เช็คโปรฯ วันเฉพาะ (ต้องยืนยัน “บินตรง” และราคา final)</td></tr>
+          </tbody>
+        </table>
+
+        <p class="muted small" style="margin:10px 0 0">
+          วิธีหา “ถูกสุด” ให้เร็ว: เปิด Google Flights → เลือก <strong>Nonstop</strong> → เปิด <strong>Price graph / Date grid</strong> → เลื่อนวันไปมา 2–5 วัน
+          (ช่วงซากุระ/หยุดยาว ราคาจะเด้งเร็ว)
+        </p>
+      </div>
+    </section>
+
+
+
+
+    <section class="card">
+      <div class="hd"><h2>🔗 วิธีทำเป็นลิงก์แชร์</h2><span class="badge">ง่ายมาก</span></div>
+      <div class="bd">
+        <ol class="list">
+          <li>ดาวน์โหลดไฟล์นี้ แล้วตั้งชื่อ <strong>jp-trip-5days.html</strong></li>
+          <li>อัปโหลดขึ้น Netlify (ลากวางไฟล์) หรือ GitHub Pages</li>
+          <li>ได้ลิงก์สาธารณะ ส่งให้ครอบครัวเปิดดูได้</li>
+        </ol>
+      </div>
+    </section>
+  </aside>
+</main>
+
+<footer>
+  <div class="hint">หมายเหตุ: เวลาเป็นโครงใช้งานจริง ปรับตามเวลาไฟลต์/สภาพอากาศได้ แนะนำคงหลัก “วันเดินทางไกล = ไม่ยัดแน่น” และ “วัน Disney = พักก่อน 1 คืน”</div>
+</footer>
+
+<script>
+  function toggleAll(open){ document.querySelectorAll('details.day').forEach(d => d.open = open); }
+  function copyLink(){
+    const url = location.href;
+    navigator.clipboard.writeText(url).then(()=>toast("คัดลอกลิงก์แล้ว ✅"))
+      .catch(()=>toast("คัดลอกไม่สำเร็จ ❗"));
+  }
+  let toastTimer;
+  function toast(msg){
+    clearTimeout(toastTimer);
+    let el = document.getElementById('toast');
+    if(!el){
+      el = document.createElement('div');
+      el.id = 'toast';
+      Object.assign(el.style,{
+        position:'fixed',left:'50%',bottom:'18px',transform:'translateX(-50%)',
+        padding:'10px 14px',border:'1px solid rgba(255,255,255,.18)',
+        background:'rgba(0,0,0,.55)',color:'white',borderRadius:'14px',
+        backdropFilter:'blur(10px)',zIndex:'9999',fontWeight:'700',fontSize:'13px'
+      });
+      document.body.appendChild(el);
+    }
+    el.textContent = msg;
+    el.style.opacity='1';
+    toastTimer = setTimeout(()=>{ el.style.opacity='0'; }, 1800);
+  }
+  // Checklist persistence
+  const KEY = "jp_trip_5days_checklist_v1";
+  const checklist = document.getElementById('checklist');
+  const inputs = Array.from(checklist.querySelectorAll('input[type=checkbox]'));
+  function saveChecklist(){ localStorage.setItem(KEY, JSON.stringify(inputs.map(i=>i.checked))); }
+  function loadChecklist(){
+    try{
+      const raw = localStorage.getItem(KEY); if(!raw) return;
+      const state = JSON.parse(raw); inputs.forEach((i,idx)=> i.checked = !!state[idx]);
+    }catch(e){}
+  }
+  function resetChecklist(){
+    inputs.forEach(i=> i.checked=false);
+    localStorage.removeItem(KEY);
+    toast("รีเซ็ต checklist แล้ว ✅");
+  }
+  inputs.forEach(i => i.addEventListener('change', saveChecklist));
+  loadChecklist();
+</script>
+</body>
+</html>
